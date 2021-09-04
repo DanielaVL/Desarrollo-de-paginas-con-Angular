@@ -1,0 +1,8 @@
+<!--<div *ngFor="let pais of paises">{{pais}}</div>-->
+<ul class="list-group">
+  <li class="list-group-item list-group-item-warning" *ngFor="let pais of paises, let indice=index">
+    <td> {{indice+1}} ~ 
+      <td>{{ pais}}</td>
+  </li>
+</ul>
+

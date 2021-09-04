@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SaludadorComponent } from './saludador/saludador.component';
+import { ListadorComponent } from './listador/listador.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SaludadorComponent
+    SaludadorComponent,
+    ListadorComponent
   ],
   imports: [
     BrowserModule,
