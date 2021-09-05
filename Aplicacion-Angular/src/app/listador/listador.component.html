@@ -1,8 +1,36 @@
-<!--<div *ngFor="let pais of paises">{{pais}}</div>-->
-<ul class="list-group">
-  <li class="list-group-item list-group-item-warning" *ngFor="let pais of paises, let indice=index">
-    <td> {{indice+1}} ~ 
-      <td>{{ pais}}</td>
-  </li>
-</ul>
+<div style="width: 50%; float:left; text-align: right">
+   <ul class="list-group" style="display: inline-table;">
+    <li class="list-group-item list-group-item-warning" *ngFor="let paises of pais, let indice=index">
+      <td> {{indice+1}} ~ 
+      <td>{{ paises}}</td>
+    </li>
+  </ul>
+</div>
+
+<div style="width: 50%; float:right">
+  <ul class="list-group" style="display: inline-table;">
+    <li class="list-group-item list-group-item-info" *ngFor="let urls of url, let indice=index"> 
+      <a href="{{urls}}">Foto</a>
+    </li>
+  </ul>
+</div>
+
+<div>-</div>
+
+<div style="text-align: center;">
+  <form style="display: inline-table;">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">¿Cuál es el destino al que deseas viajar?</label>
+    <input style="border-color: yellow;" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Ingresa la URL donde se vea una foto del destino de tus sueños</label>
+    <input style="border-color: deeppink;" type="password" class="form-control" >
+  </div>
+  <button type="submit" class="btn btn-success">Aceptar</button>
+</form>
+
+</div>
+
+
 

@@ -10,7 +10,7 @@ import { ListadorComponent } from './listador/listador.component';
   declarations: [
     AppComponent,
     SaludadorComponent,
-    ListadorComponent
+    ListadorComponent,
   ],
   imports: [
     BrowserModule,
