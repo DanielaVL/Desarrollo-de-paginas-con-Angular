@@ -1,16 +1,16 @@
 <div style="width: 50%; float:left; text-align: right">
    <ul class="list-group" style="display: inline-table;">
-    <li class="list-group-item list-group-item-warning" *ngFor="let paises of pais, let indice=index">
-      <td> {{indice+1}} ~ 
-      <td>{{ paises}}</td>
+    <li class="list-group-item list-group-item-warning" *ngFor="let pais of paises, let indice=index">
+      <td> {{indice+1}} ~</td>
+      <td>{{ pais}}</td>
     </li>
   </ul>
 </div>
 
 <div style="width: 50%; float:right">
   <ul class="list-group" style="display: inline-table;">
-    <li class="list-group-item list-group-item-info" *ngFor="let urls of url, let indice=index"> 
-      <a href="{{urls}}">Foto</a>
+    <li class="list-group-item list-group-item-info" *ngFor="let url of urls"> 
+      <a href="{{url}}">Foto</a>
     </li>
   </ul>
 </div>
@@ -19,18 +19,17 @@
 
 <div style="text-align: center;">
   <form style="display: inline-table;">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">¿Cuál es el destino al que deseas viajar?</label>
-    <input style="border-color: yellow;" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Ingresa la URL donde se vea una foto del destino de tus sueños</label>
-    <input style="border-color: deeppink;" type="password" class="form-control" >
-  </div>
-  <button type="submit" class="btn btn-success">Aceptar</button>
-</form>
-
+    <div class="mb-3">
+      <label for="exampleInputDestination" class="form-label">¿Cuál es el destino al que desearías viajar?</label>
+      <input name="destino" style="border-color: yellow;" type="text" class="form-control" id="exampleInputDestination1" aria-describedby="destinationilHelp">
+    </div>
+  
+    <div class="mb-3">
+      <label for="exampleInputUrl" class="form-label">Ingresa la URL donde se vea una foto del destino de tus sueños</label>
+      <input name="url" style="border-color: deeppink;" type="text" class="form-control" id="exampleInputUrl1" aria-describedby="urlHelp">
+    </div>
+    
+    <button type="button" class="btn btn-success" onclick="paisEnLaLista()">Aceptar</button>
+  </form>
 </div>
-
-
 
