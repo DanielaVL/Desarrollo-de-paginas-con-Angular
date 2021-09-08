@@ -17,7 +17,7 @@
 
 <div>-</div>
 
-<div style="text-align: center;">
+<!--<div style="text-align: center;">
   <form style="display: inline-table;">
     <div class="mb-3">
       <label for="exampleInputDestination" class="form-label">¿Cuál es el destino al que desearías viajar?</label>
@@ -29,7 +29,27 @@
       <input name="url" style="border-color: deeppink;" type="text" class="form-control" id="exampleInputUrl1" aria-describedby="urlHelp">
     </div>
     
-    <button type="button" class="btn btn-success" onclick="paisEnLaLista()">Aceptar</button>
+    <button type="button" class="btn btn-success" (click)="guardar(nombre.value, url.value)">Aceptar</button>
   </form>
-</div>
+</div>-->
+    <hr class="mb-4">
+
+        <div style="text-align: center;">
+                    <form style="display: inline-table;">
+                        <div class="mb-3">
+                            <label for="nombre">¿Cuál es el destino al que desearías viajar?</label>
+                            <input type="text" style="border-color: yellow" class="form-control" id="nombre" placeholder="Ingresar nombre del país" #nombre>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Imagen Url">Ingresa la URL donde se vea una foto del destino de tus sueños</label>
+                            <input name="url" type="text" style="border-color: deeppink" class="form-control" id="imagenUrl" aria-describedby="urlHelp" placeholder="Ingresar url" #url>
+                        </div>
+                        <button type="submit" class="btn  btn-warning" (click)="aceptar(nombre.value, url.value)">Aceptar</button>
+                    </form>
+                </div>
+    <hr class="mb-5">
+    <div class="row row-flex">
+        <app-destino-viaje *ngFor="let d of destinos" string [destino]="d"></app-destino-viaje>
+    </div>
+
 

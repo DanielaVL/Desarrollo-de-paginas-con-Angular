@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DestinoViaje } from '../models/destino-viaje.model';
 
 @Component({
   selector: 'app-listador',
@@ -20,14 +21,13 @@ export class ListadorComponent implements OnInit {
     "https://www.google.com/search?q=mexico+el+angel&tbm=isch&ved=2ahUKEwjSmuygtufyAhUliOAKHbkLDPEQ2-cCegQIABAA&oq=mexico+el+angel&gs_lcp=CgNpbWcQAzIFCAAQgAQyBQgAEIAEMgYIABAFEB4yBggAEAgQHjoHCAAQsQMQQzoECAAQQ1DVgwFYj4wBYJSOAWgAcAB4AIABigKIAc8KkgEFMC44LjGYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=6oA0YdL9IaWQgge5l7CIDw&bih=657&biw=1366&rlz=1C1LENN_enCO488CO488#imgrc=O4Gu41hT7hYiJM&imgdii=WmRYXz7vik-3mM",
   ];
 
-  constructor() {}
+  //constructor() {}
 
-  ngOnInit(): void {
+  /*ngOnInit(): void {
 
     /*Esto es una plantilla de lo que pasaría al dar click en el botón "Aceptar" pero no lo sé usar,
       quería usar una función llamada "paísEnLaLista" y claramente no usaría valores quemados 
       sino los input "destino" y "url" 
-    */
     
     console.log(this.paises)
     const newCountry='Brasil';
@@ -37,7 +37,25 @@ export class ListadorComponent implements OnInit {
       this.paises.push(newCountry)
       this.urls.push(newUrl)
     }
-    console.log(this.paises)
+    console.log(this.paises)*/
+
+  destinos: DestinoViaje[];
+  constructor() { 
+    this.destinos = [];
   }
 
-}
+  ngOnInit():void {
+  }
+
+  aceptar(nombre:string, url:string):boolean {
+    if(nombre==="" || url===""){
+      alert("Debes rellenar los campos para continuar");
+      return true;
+    }else{
+      this.destinos.push(new DestinoViaje(nombre, url));
+      console.log(this.destinos);
+      return false;
+    }
+  }
+
+} 
